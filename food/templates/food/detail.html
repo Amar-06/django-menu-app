@@ -8,12 +8,31 @@
 </head>
 <body>
     {% block body %}
+    <br><br><br>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{food_details.image}}" class="card" style="width:400px; height:400px; object-fit:cover;" >
+        </div>
+        <div class="col-md-6">
+            <h1 style="color: rgb(10, 9, 7);">{{food_details.dish}}</h1>
+            <h2 style="color: rgb(65, 4, 21);">Food Details</h2>
+            <br><br>
+            <h3 style="color:  rgb(220, 123, 4);">dish description:<br> {{food_details.description}}</h3>
+            <h4 >$ {{food_details.price}}</h4>
+        </div>
+
+    </div>
+    </div>
+    {% endblock %}
+    
     <h1 style="color: rgb(10, 9, 7);">Food Details</h1>
     
     <h2 style="color: rgb(65, 4, 21);">{{food_details.dish}} ------------- {{i.price}}</h2>
     <br><br>
     <h3 style="color:  rgb(220, 123, 4);">dish description:<br> {{food_details.ingrediant}}</h3>
-    {% endblock %}
+    <h4>$ {{food_details.price}}</h4>
+    
        
     
 </body>

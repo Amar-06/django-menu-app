@@ -9,7 +9,9 @@
 </head>
 <body>
     {% block body %}
+    <br><br>
     {%for i in Food_List%}
+    <br><br>
     <div class="row">
         <div class="col-md-3  offset-md-2">
             <img class="img-fluid rounded"
@@ -20,6 +22,9 @@
             <h4>{{i.dish}}</h4>
             <h5>{{i.ingrediant}}</h5>
             <h6>{{i.price}}</h6>
+        </div>
+        <div class="col-md-2">
+            <a href="{% url 'food:Food_details' i.dish %}" class="btn btn-success">Details</a>
         </div>
     </div>
     {%endfor%}
