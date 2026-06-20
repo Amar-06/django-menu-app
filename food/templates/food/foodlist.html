@@ -20,8 +20,7 @@
         </div>
         <div class="col-md-5">
             <h4>{{i.dish}}</h4>
-            <h5>{{i.ingrediant}}</h5>
-            <h6>{{i.price}}</h6>
+            <h5>$ {{i.price}}</h5>
         </div>
         <div class="col-md-2">
             <a href="{% url 'food:Food_details' i.dish %}" class="btn btn-success">Details</a>

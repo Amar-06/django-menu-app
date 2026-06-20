@@ -21,6 +21,12 @@
             <h3 style="color:  rgb(220, 123, 4);">dish description:<br> {{food_details.description}}</h3>
             <h4 >$ {{food_details.price}}</h4>
         </div>
+        
+         <div class="col-md-6">
+            <br><br>
+            <a href="{% url 'food:update_food' food_details.dish %}" class="btn btn-success">Update</a>
+             <a href="{% url 'food:delete_food' food_details.dish %}" class="btn btn-success">delete</a>
+        </div>
 
     </div>
     </div>
