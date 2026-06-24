@@ -17,9 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from users import views as user_views
-
+from django.contrib.auth import views as authentication_view
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('food/',include('food.urls')),
     path('register/',user_views.register, name='register'),
+    path('login/',authentication_view.LoginView.as_view(template_name='users/Login.html'),name='login'),
+    path('logout/',user_views.logout_user,name='logout_user'),
+    path('profile/',user_views.profilepage,name='profilepage')
 ]
+# USING STATIC IMAGES UPLOADED BY THE USERS 
+urlpatterns += [
+   # Your URL patterns here
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
