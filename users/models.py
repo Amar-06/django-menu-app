@@ -4,6 +4,6 @@ from django.contrib.auth.models import User
 class Profile(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     location=models.CharField(max_length=120)
-    image=models.ImageField(default='https://www.chemetal.com/wp-content/uploads/default-avatar1.jpg' ,upload_to='profile_pictures')
+    image=models.ImageField(default='profilepic.jpg' ,upload_to='profile_pictures')
     def __str__(self):
-        return self.user.username
+        return self.user.username 
