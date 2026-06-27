@@ -1,4 +1,51 @@
 {% extends 'food/base.html' %}
+
+{% block body %}
+
+<br><br>
+
+{% for i in food_list %}
+
+<br><br>
+
+<div class="row">
+
+    <div class="col-md-3 offset-md-2">
+
+        <img class="img-fluid rounded"
+             src="{{ i.image }}"
+             style="width:200px;
+                    height:150px;
+                    object-fit:cover;">
+
+    </div>
+
+    <div class="col-md-5">
+
+        <h4>{{ i.dish }}</h4>
+
+        <h5>$ {{ i.price }}</h5>
+        
+        <h6>posted by : {{i.user_name}} </h6>
+
+    </div>
+
+    <div class="col-md-2">
+
+        <a href="{% url 'food:Food_Detail' i.id %}"
+           class="btn btn-success">
+           Details
+        </a>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}
+
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +55,7 @@
 
 </head>
 <body>
-    {% block body %}
+    #block body
     <br><br>
     {%for i in Food_List%}
     <br><br>
@@ -27,10 +74,10 @@
         </div>
     </div>
     {%endfor%}
-    {% endblock %}
+    #block body end
     
     
 
     
 </body>
-</html>
+</html>-->

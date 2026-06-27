@@ -1,4 +1,65 @@
 {% extends 'food/base.html' %}
+
+{% block body %}
+
+<br><br><br>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <img src="{{ food_details.image }}"
+                 class="card"
+                 style="width:400px;
+                        height:400px;
+                        object-fit:cover;">
+
+        </div>
+
+        <div class="col-md-6">
+
+            <h1>{{ food_details.dish }}</h1>
+
+            
+
+            <br><br>
+
+            <h3>
+                Dish Description:
+                <br><br>
+                {{ food_details.description }}
+            </h3>
+
+            <h4>$ {{ food_details.price }}</h4>
+
+            <h5>posted by : {{food_details.user_name}} </h5>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <br><br>
+
+            <a href="{% url 'food:update_food' food_details.id %}"
+               class="btn btn-success">
+               Update
+            </a>
+
+            <a href="{% url 'food:delete_food' food_details.id %}"
+               class="btn btn-danger">
+               Delete
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +68,7 @@
     <title>Document</title>
 </head>
 <body>
-    {% block body %}
+    block body %
     <br><br><br>
     <div class="container">
     <div class="row">
@@ -15,11 +76,11 @@
             <img src="{{food_details.image}}" class="card" style="width:400px; height:400px; object-fit:cover;" >
         </div>
         <div class="col-md-6">
-            <h1 style="color: rgb(10, 9, 7);">{{food_details.dish}}</h1>
+            <h1 style="color: rgb(10, 9, 7);">{{object.dish}}</h1>
             <h2 style="color: rgb(65, 4, 21);">Food Details</h2>
             <br><br>
-            <h3 style="color:  rgb(220, 123, 4);">dish description:<br> {{food_details.description}}</h3>
-            <h4 >$ {{food_details.price}}</h4>
+            <h3 style="color:  rgb(220, 123, 4);">dish description:<br> {{object.description}}</h3>
+            <h4 >$ {{object.price}}</h4>
         </div>
         
          <div class="col-md-6">
@@ -30,16 +91,10 @@
 
     </div>
     </div>
-    {% endblock %}
+    % endblock %
     
-    <h1 style="color: rgb(10, 9, 7);">Food Details</h1>
-    
-    <h2 style="color: rgb(65, 4, 21);">{{food_details.dish}} ------------- {{i.price}}</h2>
-    <br><br>
-    <h3 style="color:  rgb(220, 123, 4);">dish description:<br> {{food_details.ingrediant}}</h3>
-    <h4>$ {{food_details.price}}</h4>
     
        
     
 </body>
-</html>
+</html> -->
