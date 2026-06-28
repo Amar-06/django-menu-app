@@ -1,3 +1,54 @@
+{% extends 'food/base.html' %}
+
+{% block body %}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="card shadow p-4">
+
+                <h2 class="text-center mb-4">
+                    Create Account
+                </h2>
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <div class="d-grid mt-3">
+                        <button type="submit"
+                                class="btn btn-success">
+                            Register
+                        </button>
+                    </div>
+
+                </form>
+
+                <hr>
+
+                <p class="text-center">
+                    Already have an account?
+                    <a href="{% url 'login' %}">
+                        Login Here
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,3 +64,4 @@
     </form>
 </body>
 </html>
+-->

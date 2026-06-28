@@ -2,6 +2,51 @@
 
 {% block body %}
 
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="card-header bg-success text-white text-center">
+                    <h2>Add New Dish</h2>
+                </div>
+
+                <div class="card-body p-4">
+
+                    <form method="POST">
+
+                        {% csrf_token %}
+
+                        {{ form.as_p }}
+
+                        <div class="d-grid mt-4">
+
+                            <button type="submit"
+                                    class="btn btn-success btn-lg">
+                                🍽 Add Dish
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+<!--
+
 <h1>Add New Dish</h1>
 
 <form method="POST">
@@ -10,4 +55,4 @@
     <input type="submit" value="Save">
 </form>
 
-{% endblock %}
+-->

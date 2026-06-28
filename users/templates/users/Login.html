@@ -1,4 +1,53 @@
 {% extends 'food/base.html' %}
+
+{% block body %}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-5">
+
+            <div class="card shadow p-4">
+
+                <h2 class="text-center mb-4">
+                    Login
+                </h2>
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <div class="d-grid">
+                        <button type="submit"
+                                class="btn btn-primary">
+                            Login
+                        </button>
+                    </div>
+
+                </form>
+
+                <hr>
+
+                <p class="text-center">
+                    Don't have an account?
+                    <a href="{% url 'register' %}">
+                        Register Here
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +56,13 @@
     <title>Document</title>
 </head>
 <body>
-    {%block body%}
+    
     <h1>Login</h1>
     <form method="POST">
         {%csrf_token%}
         {{form}}
         <button type="submit">Login</button>
     </form>
-    {%endblock%}
+    
 </body>
-</html>
+</html>-->

@@ -2,6 +2,60 @@
 
 {% block body %}
 
+<div class="container mt-5">
+
+    {% for i in food_list %}
+
+    <div class="card mb-4 shadow-sm border-0">
+        <div class="row g-0 align-items-center">
+
+            <!-- Image -->
+            <div class="col-md-3">
+                <img src="{{ i.image }}"
+                     class="img-fluid rounded-start"
+                     style="width:100%;
+                            height:220px;
+                            object-fit:cover;">
+            </div>
+
+            <!-- Details -->
+            <div class="col-md-7">
+                <div class="card-body">
+
+                    <h3 class="card-title text-dark fw-bold">
+                        {{ i.dish }}
+                    </h3>
+
+                    <h5 class="text-success fw-bold">
+                        ₹ {{ i.price }}
+                    </h5>
+
+                    <p class="text-muted mb-1">
+                        <strong>Posted by:</strong>
+                        {{ i.user_name }}
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="col-md-2 text-center">
+                <a href="{% url 'food:Food_Detail' i.id %}"
+                   class="btn btn-outline-success px-4">
+                    Details
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
+
+<!--
 <br><br>
 
 {% for i in food_list %}
@@ -42,8 +96,8 @@
 </div>
 
 {% endfor %}
+-->
 
-{% endblock %}
 
 <!--
 <!DOCTYPE html>
